@@ -1,0 +1,44 @@
+<odoo>
+  <record model="ir.ui.view" id="natacion.test_tree_view">
+    <field name="name">natacion.test.tree</field>
+    <field name="model">natacion.test</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="description"/>
+        <field name="style_id"/>
+        <field name="category"/>
+        <field name="registered_swimmers"/>
+      </list>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="natacion.test_form_view">
+    <field name="name">natacion.test.form</field>
+    <field name="model">natacion.test</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+            <button name="generate_series"
+                    type="object"
+                    string="Generar Sèries"
+                    class="oe_highlight"/>
+            <button name="action_generate_series_with_swimmers"
+                    type="object"
+                    string="Generar Series con Nadadores"
+                    class="btn-primary"/>
+        </header>
+        <sheet>
+          <group>
+            <field name="description"/>
+            <field name="style_id"/>
+            <field name="category"/>
+            <field name="session_id"/>
+            <field name="registered_swimmers"/>
+            <field name="series"/>
+            <field name="result_ids"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+  <record model="ir.ui.view" id="natacion.serie_tree_view">
+    <field name="name">natacion.serie.tree</field>
+    <field name="model">natacion.serie</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name"/>
+        <field name="test_id"/>
+      </list>
+    </field>
+  </record>
+</odoo>

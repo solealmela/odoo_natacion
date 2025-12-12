@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="natacion.club_tree_view">
+        <field name="name">natacion.club.tree</field>
+        <field name="model">natacion.club</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="town"/>
+                <field name="swimmers" widget="many2many_count" string="Socis"/>
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="natacion.club_form_view">
+        <field name="name">natacion.club.form</field>
+        <field name="model">natacion.club</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="image_1920" widget="image"/>
+                        <field name="name"/>
+                        <field name="town"/>
+                        <field name="swimmers"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="natacion.club_kanban_view">
+        <field name="name">natacion.club.kanban</field>
+        <field name="model">natacion.club</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global1">
+                            <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_1920'}"/>
+                            
+                        </div>
+                        <div class="oe_kanban_global2">
+                            <strong><field name="name"/></strong>
+                            <field name="total_points" widget="statinfo" string="Punts">
+                                <attribute name="colors">
+                                    [('gold','primer'),('silver','segon'),('bronze','tercer')]
+                                </attribute>
+                            </field>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>
+
+

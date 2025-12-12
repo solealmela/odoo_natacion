@@ -1,0 +1,15 @@
+<odoo>
+  <record model="ir.ui.view" id="natacion.result_tree_view">
+    <field name="name">natacion.result.tree</field>
+    <field name="model">natacion.result</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="swimmer_id"/>
+        <field name="serie_id"/>
+        <field name="test_id"/>
+        <field name="time"/>
+        <field name="position"/>
+      </list>
+    </field>
+  </record>
+</odoo>

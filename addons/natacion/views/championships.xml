@@ -1,0 +1,41 @@
+<odoo>
+  <record model="ir.ui.view" id="natacion.championship_tree_view">
+    <field name="name">natacion.championship.tree</field>
+    <field name="model">natacion.championship</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name"/>
+        <field name="club_ids"/>
+        <field name="swimmer_ids"/>
+        <field name="start_date"/>
+        <field name="end_date"/>
+      </list>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="natacion.championship_form_view">
+    <field name="name">natacion.championship.form</field>
+    <field name="model">natacion.championship</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <button name="action_add_all_valid_swimmers"
+                  string="Añadir nadadores de clubes"
+                  type="object"
+                  class="btn-primary"/>
+        </header>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="club_ids"/>
+            <field name="swimmer_ids"/>
+            <field name="session_ids"/>
+            <field name="start_date"/>
+            <field name="end_date"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+</odoo>

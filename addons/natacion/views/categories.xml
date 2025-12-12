@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="natacion.category_tree_view">
+        <field name="name">natacion.category.tree</field>
+        <field name="model">natacion.category</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="years_min"/>
+                <field name="years_max"/>
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="natacion.category_form_view">
+        <field name="name">natacion.category.form</field>
+        <field name="model">natacion.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="years_min"/>
+                        <field name="years_max"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
+

@@ -1,0 +1,105 @@
+<odoo>
+  <data>
+        <!-- explicit list view definition -->
+
+        <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="natacion.action_club_window">
+        <field name="name">Clubs</field>
+        <field name="res_model">natacion.club</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="natacion.action_categoria_window">
+        <field name="name">Categories</field>
+        <field name="res_model">natacion.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="natacion.action_nadador_window">
+        <field name="name">Nadadors</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form,kanban</field>
+        <field name="domain">[('is_swimmer','=',True)]</field>
+        <field name="context">{'default_is_swimmer': True, 'search_default_is_swimmer': 1}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('natacion.swimmer_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('natacion.swimmer_form_view')}),]" />
+    </record>
+
+    <record model="ir.actions.act_window" id="natacion.action_estil_window">
+        <field name="name">Estils</field>
+        <field name="res_model">natacion.style</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="natacion.action_campionat_window">
+        <field name="name">Campionats</field>
+        <field name="res_model">natacion.championship</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="natacion.action_session_window">
+        <field name="name">Sessions</field>
+        <field name="res_model">natacion.session</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="natacion.action_prova_window">
+        <field name="name">Proves</field>
+        <field name="res_model">natacion.test</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="natacion.action_besttime_window">
+        <field name="name">Best Times</field>
+        <field name="res_model">natacion.besttime</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="natacion.action_serie_window">
+        <field name="name">Series</field>
+        <field name="res_model">natacion.serie</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="natacion.action_result_window">
+        <field name="name">Results</field>
+        <field name="res_model">natacion.result</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    
+    <!-- Top menu item -->
+
+    <menuitem name="Natació" id="natacion.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem id="natacion.menu_clubs" name="Clubs" parent="natacion.menu_root"/>
+    <menuitem id="natacion.menu_categories" name="Categories" parent="natacion.menu_root"/>
+    <menuitem id="natacion.menu_nadadors" name="Nadadors" parent="natacion.menu_root"/>
+    <menuitem id="natacion.menu_estils" name="Estils" parent="natacion.menu_root"/>
+    <menuitem id="natacion.menu_campionats" name="Campionats" parent="natacion.menu_root"/>
+    <menuitem id="natacion.menu_sessions" name="Sessions" parent="natacion.menu_root"/>
+    <menuitem id="natacion.menu_proves" name="Proves" parent="natacion.menu_root"/>
+
+
+    <!-- actions -->
+
+    <menuitem id="natacion.menu_clubs_list" name="Llista de Clubs" parent="natacion.menu_clubs"
+                action="natacion.action_club_window"/>
+    <menuitem id="natacion.menu_categories_list" name="Llista de Categories" parent="natacion.menu_categories"
+                action="natacion.action_categoria_window"/>
+    <menuitem id="natacion.menu_nadadors_list" name="Llista de Nadadors" parent="natacion.menu_nadadors"
+                action="natacion.action_nadador_window"/>
+    <menuitem id="natacion.menu_estils_list" name="Llista d'Estils" parent="natacion.menu_estils"
+                action="natacion.action_estil_window"/>
+    <menuitem id="natacion.menu_campionats_list" name="Llista de Campionats" parent="natacion.menu_campionats"
+                action="natacion.action_campionat_window"/>
+    <menuitem id="natacion.menu_sessions_list" name="Llista de Sessions" parent="natacion.menu_sessions"
+                action="natacion.action_session_window"/>
+    <menuitem id="natacion.menu_proves_list" name="Llista de Proves" parent="natacion.menu_proves"
+                action="natacion.action_prova_window"/>
+
+  </data>
+</odoo>

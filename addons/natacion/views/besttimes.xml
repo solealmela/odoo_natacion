@@ -1,0 +1,13 @@
+<odoo> 
+  <record model="ir.ui.view" id="natacion.besttime_tree_view">
+    <field name="name">natacion.besttime.tree</field>
+    <field name="model">natacion.besttime</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="swimmer_id"/>
+        <field name="style_id"/>
+        <field name="time"/>
+      </list>
+    </field>
+  </record>
+</odoo>

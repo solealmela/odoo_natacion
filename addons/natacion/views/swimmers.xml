@@ -1,0 +1,50 @@
+<odoo>
+    <record model="ir.ui.view" id="natacion.swimmer_tree_view">
+        <field name="name">natacion.swimmer.tree</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="year_of_birth"/>
+                <field name="age"/>
+                <field name="category"/>
+                <field name="club_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="natacion.swimmer_form_view">
+        <field name="name">natacion.swimmer.form</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="open_full_form"
+                            type="object"
+                            string="Ver Ficha Completa"
+                            class="oe_highlight"/>
+                </header>
+                <header>
+                    <button name="action_register_payment"
+                            string="Registrar Pago"
+                            type="object"
+                            class="oe_highlight"/>
+              </header>
+                <sheet>
+                    <group>
+                        <field name="image_1920" widget="image" options="{'size': [150]}"/>
+                        <field name="name"/>
+                        <field name="year_of_birth"/>
+                        <field name="age"/>
+                        <field name="category"/>
+                        <field name="club_id"/>
+                        <field name="best_times"/>
+                        <field name="last_payment_date"/>
+                        <field name="payment_valid_until"/>
+                        <field name="payment_progress" widget="progressbar"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

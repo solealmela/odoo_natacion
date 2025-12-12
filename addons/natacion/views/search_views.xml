@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_natacion_swimmer_search" model="ir.ui.view">
+    <field name="name">natacion.swimmer.search</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" eval="False"/>
+    <field name="arch" type="xml">
+      <search string="Swimmers" create="true" expand="0">
+        <filter name="filter_is_swimmer" string="Solo Nadadors" domain="[('is_swimmer','=',True)]" default="1"/>
+        <filter name="filter_with_club" string="Amb Club" domain="[('club_id','!=',False)]"/>
+        <filter name="filter_no_club" string="Sense Club" domain="[('club_id','=',False)]"/>
+        <separator/>
+
+        <field name="name"/>
+        <field name="category" string="Categoria"/>
+        <field name="club_id" string="Club"/>
+        <field name="year_of_birth" string="Any naixement"/>
+
+        <filter name="filter_paid_recent" string="Pago recent (1 any)" domain="[('last_payment_date','&gt;=', (context_today() - relativedelta(years=1)) )]"/>
+        <filter name="filter_payment_overdue" string="Pagament caducat" domain="[('last_payment_date','&lt;', (context_today() - relativedelta(years=1)) )]"/>
+        <separator/>
+
+        <group expand="0">
+          <filter string="Per Club" domain="[]" context="{'group_by':'club_id'}"/>
+          <filter string="Per Categoria" domain="[]" context="{'group_by':'category'}"/>
+        </group>
+      </search>
+    </field>
+  </record>
+
+
+  <record id="view_natacion_club_search" model="ir.ui.view">
+    <field name="name">natacion.club.search</field>
+    <field name="model">natacion.club</field>
+    <field name="arch" type="xml">
+      <search string="Clubs" create="true" expand="0">
+        <field name="name"/>
+        <field name="town" string="Poble"/>
+        <filter name="has_swimmers" string="Amb Nadadors" domain="[('swimmers','!=',False)]"/>
+        <filter name="no_swimmers" string="Sense Nadadors" domain="[('swimmers','=',False)]"/>
+        <separator/>
+        <group>
+          <filter string="Per Poble" domain="[]" context="{'group_by':'town'}"/>
+        </group>
+        <separator/>
+
+        <filter string="Top Punts" name="top_points" domain="[]" context="{'group_by':'total_points'}"/>
+      </search>
+    </field>
+  </record>
+</odoo>
