@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_session_tickets" model="ir.actions.report">
+        <field name="name">Entradas de la Sesión</field>
+        <field name="model">natacion.session</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">natacion.report_tickets_template</field>
+        <field name="report_file">natacion.report_tickets_template</field>
+        <field name="paperformat_id" ref="natacion.paperformat_ticket_natacion"/>
+        <field name="binding_model_id" ref="model_natacion_session"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_tickets_template">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="session">
+                <t t-foreach="range(1, int(context.get('total_tickets', 11)))" t-as="ticket_num">
+                    
+                    <div class="page" style="width: 200mm; height: 50mm; position: relative; overflow: hidden; margin: 0; padding: 0; border: 1px solid #eee; page-break-after: always; font-family: 'Helvetica', sans-serif;">
+                        
+                        <div style="position: absolute; left: 0; top: 0; width: 45mm; height: 50mm; background-color: #004a99; color: white; text-align: center;">
+                             <img t-if="res_company.logo" 
+                                  t-att-src="image_data_uri(res_company.logo)" 
+                                  style="max-width: 35mm; max-height: 25mm; margin-top: 5mm; filter: brightness(0) invert(1);"/>
+                             <p style="margin-top: 5mm; font-weight: bold; font-size: 22pt;">FCN</p>
+                        </div>
+
+                        <div style="position: absolute; left: 50mm; top: 5mm; width: 105mm;">
+                            <h2 style="margin: 0; color: #004a99; font-size: 20pt; text-transform: uppercase; font-weight: bold;">
+                                <span t-field="session.championship_id.name"/>
+                            </h2>
+                            <h4 style="margin: 3mm 0; color: #333; font-size: 14pt;">
+                                Sesión: <span t-field="session.name"/>
+                            </h4>
+                            <p style="margin: 0; font-size: 11pt; color: #666;">
+                                <strong>Fecha:</strong> <span t-field="session.date" t-options='{"widget": "datetime"}'/>
+                            </p>
+                            <p style="margin-top: 5mm; font-size: 16pt; color: #cc0000; font-weight: bold;">
+                                ENTRADA Nº: <t t-out="ticket_num"/>
+                            </p>
+                        </div>
+
+                        <div style="position: absolute; right: 8mm; top: 5mm; width: 35mm; text-align: center;">
+                            <t t-set="qr_code_value" t-value="'S%s-T%s' % (session.id, ticket_num)"/>
+                            
+                            <img t-att-src="'/report/barcode/?barcode_type=QR&amp;value=%s&amp;width=150&amp;height=150' % qr_code_value" 
+                                 style="width: 32mm; height: 32mm; border: 1px solid #eee; padding: 2mm;"/>
+                            
+                            <p style="font-size: 8pt; margin-top: 2mm; color: #999; font-weight: bold;">VALIDAR ACCESO</p>
+                        </div>
+
+                        <div style="position: absolute; left: 45mm; top: 0; bottom: 0; border-left: 1px dashed #ccc;"></div>
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

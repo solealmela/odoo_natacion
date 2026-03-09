@@ -1,0 +1,86 @@
+<odoo>
+    <record model="ir.ui.view" id="natacion.championship_tree_view">
+        <field name="name">natacion.championship.tree</field>
+        <field name="model">natacion.championship</field>
+        <field name="arch" type="xml">
+            <list string="Campeonatos">
+                <field name="name"/>
+                <field name="clubs"/>
+                <field name="swimmers"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="total_duration"/>
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="natacion.championship_form_view">
+        <field name="name">natacion.championship.form</field>
+        <field name="model">natacion.championship</field>
+        <field name="arch" type="xml">
+            <form string="Campeonato">
+                <header>
+                    <button name="action_create_championship_wizard"
+                        type="object"
+                        string="Crear campeonato"
+                        class="btn-secondary"/>
+                    <button
+                        name="action_populate_championship"
+                        type="object"
+                        string="Popular campeonato"
+                        class="btn-primary"/>
+                    <button name="%(natacion.action_register_swimmers_wizard)d" 
+                        string="Inscribir Nadadores" 
+                        type="action" 
+                        class="oe_highlight"/>
+                    <button name="action_open_results_wizard" 
+                        type="object" 
+                        string="Resultados de la sesión" 
+                        class="btn-primary"/>
+                    <button name="%(natacion.action_report_natacion_results)d" 
+                        type="action" 
+                        string="Descarregar Resultats" 
+                        class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="total_duration" readonly="1"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Clubes">
+                            <group>
+                                <field name="clubs" widget="many2many_tags"/>
+                            </group>
+                        </page>
+
+                        <page string="Nadadores">
+                            <group>
+                                <field name="swimmers" widget="many2many_tags"/>
+                            </group>
+                        </page>
+
+                        <page string="Sesiones">
+                            <group>
+                                <field name="sessions">
+                                    <list editable="bottom">
+                                        <field name="name"/>
+                                        <field name="date"/>
+                                        <field name="duration"/>
+                                    </list>
+                                </field>
+                            </group>
+                        </page>
+
+                        <page string="Clasificación">
+                            <field name="classification" widget="json" readonly="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

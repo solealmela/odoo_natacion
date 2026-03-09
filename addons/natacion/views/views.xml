@@ -1,0 +1,165 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <!-- actions opening views on models -->
+
+        <!-- Clubs -->
+        <record id="natacion.action_clubs" model="ir.actions.act_window">
+            <field name="name">Clubs</field>
+            <field name="res_model">natacion.club</field>
+            <field name="view_mode">list,form,kanban</field>
+        </record>
+
+        <!-- Categorías -->
+        <record id="natacion.action_categorias" model="ir.actions.act_window">
+            <field name="name">Categorías</field>
+            <field name="res_model">natacion.category</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Nadadores -->
+        <record id="natacion.action_nadadores" model="ir.actions.act_window">
+            <field name="name">Nadadores</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">list,form,kanban</field>
+            <field name="domain">[('is_swimmer','=',True)]</field>
+            <field name="context">{'default_is_swimmer': True, 'search_default_is_swimmer': 1}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                    (0, 0, {'view_mode': 'list', 'view_id': ref('natacion.swimmer_tree_view')}),
+                    (0, 0, {'view_mode': 'form', 'view_id': ref('natacion.swimmer_form_view')}),]" />     
+        </record>
+
+        <!-- Estilos -->
+        <record id="natacion.action_estilos" model="ir.actions.act_window">
+            <field name="name">Estilos</field>
+            <field name="res_model">natacion.style</field>
+            <field name="view_mode">list,form</field>
+        </record>   
+
+        <!-- Campeonatos -->
+        <record id="natacion.action_campeonatos" model="ir.actions.act_window">
+            <field name="name">Campeonatos</field>
+            <field name="res_model">natacion.championship</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- <record model="ir.actions.act_window" id="natacion.action_campionat_wizard">
+            <field name="name">Crear campionat</field>
+            <field name="res_model">natacion.championship_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record> -->
+
+        <!-- Sesiones -->
+        <record id="natacion.action_sesiones" model="ir.actions.act_window">
+            <field name="name">Sesiones</field>
+            <field name="res_model">natacion.session</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Pruebas -->
+        <record id="natacion.action_pruebas" model="ir.actions.act_window">
+            <field name="name">Pruebas</field>
+            <field name="res_model">natacion.test</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Mejores Tiempos -->
+        <record id="natacion.action_mejores_tiempos" model="ir.actions.act_window">
+            <field name="name">Mejores Tiempos</field>
+            <field name="res_model">natacion.besttime</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Series -->
+        <record id="natacion.action_series" model="ir.actions.act_window">
+            <field name="name">Series</field>
+            <field name="res_model">natacion.series</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Resultados -->
+        <record id="natacion.action_resultados" model="ir.actions.act_window">
+            <field name="name">Resultados</field>
+            <field name="res_model">natacion.result</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Wizards -->
+        
+        <record id="action_register_swimmers_wizard" model="ir.actions.act_window">
+            <field name="name">Inscribir Nadadores</field>
+            <field name="res_model">natacion.swimmer.registration.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="action_session_results_wizard" model="ir.actions.act_window">
+            <field name="name">Gestionar Resultados</field>
+            <field name="res_model">natacion.session.results.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="action_championship_creation_wizard" model="ir.actions.act_window">
+            <field name="name">Crear Campeonato</field>
+            <field name="res_model">natacion.championship.creation.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    
+        <!-- Top menu item -->
+
+        <menuitem id="natacion.menu_root" name="Natación" sequence="1"/>
+
+        <!-- menu categories -->
+
+        <menuitem id="natacion.menu_clubs" name="Clubs" parent="natacion.menu_root" sequence="1"/>
+        <menuitem id="natacion.menu_categorias" name="Categorías" parent="natacion.menu_root" sequence="2"/>
+        <menuitem id="natacion.menu_nadadores" name="Nadadores" parent="natacion.menu_root" sequence="3"/>
+        <menuitem id="natacion.menu_estilos" name="Estilos" parent="natacion.menu_root" sequence="4"/>
+        <menuitem id="natacion.menu_campeonatos" name="Campeonatos" parent="natacion.menu_root" sequence="5"/>
+        <menuitem id="natacion.menu_sesiones" name="Sesiones" parent="natacion.menu_root" sequence="6"/>
+        <menuitem id="natacion.menu_pruebas" name="Pruebas" parent="natacion.menu_root" sequence="7"/>
+
+
+        <!-- actions -->
+
+        <menuitem id="natacion.menu_clubs_list" 
+                name="Lista de Clubs" 
+                parent="natacion.menu_clubs"
+                action="natacion.action_clubs"/>
+
+        <menuitem id="natacion.menu_categories_list" 
+                name="Lista de Categorías" 
+                parent="natacion.menu_categorias"
+                action="natacion.action_categorias"/>
+
+        <menuitem id="natacion.menu_nadadors_list" 
+                name="Lista de Nadadores" 
+                parent="natacion.menu_nadadores"
+                action="natacion.action_nadadores"/>
+
+        <menuitem id="natacion.menu_estils_list" 
+                name="Lista de Estilos" 
+                parent="natacion.menu_estilos"
+                action="natacion.action_estilos"/>
+
+        <menuitem id="natacion.menu_campionats_list" 
+                name="Lista de Campeonatos" 
+                parent="natacion.menu_campeonatos"
+                action="natacion.action_campeonatos"/>
+
+        <menuitem id="natacion.menu_sessions_list" 
+                name="Lista de Sesiones" 
+                parent="natacion.menu_sesiones"
+                action="natacion.action_sesiones"/>
+
+        <menuitem id="natacion.menu_proves_list" 
+                name="Lista de Pruebas" 
+                parent="natacion.menu_pruebas"
+                action="natacion.action_pruebas"/>
+
+    </data>
+</odoo>

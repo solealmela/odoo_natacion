@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_session_results_wizard_form" model="ir.ui.view">
+        <field name="name">natacion.session.results.wizard.form</field>
+        <field name="model">natacion.session.results.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Introducir Tiempos de la Serie">
+                <group>
+                    <group>
+                        <field name="session"/>
+                        <field name="test" domain="[('session', '=', session)]"/>
+                    </group>
+                    <group>
+                        <field name="series" domain="[('test', '=', test)]"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Cronometraje">
+                        <field name="result_line">
+                            <list editable="bottom" create="false" delete="false">
+                                <field name="swimmer"/>
+                                <field name="time" widget="float_time"/>
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+                <footer>
+                    <button name="action_save_results" string="Guardar en JSON y Cerrar" type="object" class="btn-primary"/>
+                    <button string="Descartar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

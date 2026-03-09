@@ -1,0 +1,55 @@
+<odoo>
+    <record id="view_championship_creation_wizard_form" model="ir.ui.view">
+        <field name="name">natacion.championship.creation.wizard.form</field>
+        <field name="model">natacion.championship.creation.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Asistente de Creación">
+                <field name="step" invisible="1"/>
+                
+                <sheet>
+                    <group invisible="step != 'basic'">
+                        <field name="name"/>
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="clubs" widget="many2many_tags"/>
+                    </group>
+
+                    <group invisible="step != 'sessions'">
+                        <field name="session_ids" nolabel="1">
+                            <list>
+                                <field name="name"/>
+                                <field name="date"/>
+                            </list>
+                            <form>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                </group>
+                                <separator string="Pruebas de esta sesión"/>
+                                <field name="test_line_ids">
+                                    <list editable="bottom">
+                                        <field name="name"/>
+                                        <field name="style_id"/>
+                                        <field name="category_id"/>
+                                        <field name="series_count"/>
+                                    </list>
+                                </field>
+                            </form>
+                        </field>
+                    </group>
+
+                    <group invisible="step != 'summary'">
+                        <field name="summary_text" readonly="1"/>
+                    </group>
+                </sheet>
+
+                <footer>
+                    <button name="action_previous" string="Anterior" type="object" invisible="step == 'basic'"/>
+                    <button name="action_next" string="Siguiente" type="object" class="btn-primary" invisible="step == 'summary'"/>
+                    <button name="action_create_all" string="¡Crear Campeonato!" type="object" class="btn-success" invisible="step != 'summary'"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

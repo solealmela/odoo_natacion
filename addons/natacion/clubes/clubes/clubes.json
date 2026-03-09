@@ -1,0 +1,612 @@
+[
+    {
+      "image": "https://www.fncv.es/assets/img/val_flag.png",
+      "club": null,
+      "location": null
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/356_Logo%20Acqua%20Sincro%20gris.png",
+      "club": "ACQUA SINCRO CLUB NATACIÓN ARTÍSTICA EL PUIG",
+      "location": "EL PUIG - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/Sin%20t%C3%ADtulo%20logo.png",
+      "club": "C. DEPORTIVO ALQUIMIA",
+      "location": "TORRENT - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C. PADEL ARENA ALICANTE",
+      "location": "ALICANTE - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/172_WhatsApp%20Image%202022-10-08%20at%2010.43.31.jpeg",
+      "club": "C. SINCRO LA MURTERA  CHRISTEYNS",
+      "location": "ADOR - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/logo_sirenas.png",
+      "club": "C. SIRENAS CATARROJA",
+      "location": "CATARROJA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/183_Anagrama.jpg",
+      "club": "C.D. AQUATIC REQUENA",
+      "location": "Requena - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/188_thumbnail_ISOTIPO.png",
+      "club": "C.D. SALVAMENTO NATACIÓN SILLA",
+      "location": "silla - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/189_LOGO%20SINCRO%20NUEVO.png",
+      "club": "C.D. STADIO ALICANTE",
+      "location": "ALICANTE - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/191_LogoWTuria%20PNG%20-%20prueba2.jpg",
+      "club": "C.D. WATERPOLO TURIA",
+      "location": "Valencia - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/192_IMG_4970.JPG",
+      "club": "C.E. ELDENSE",
+      "location": "ELDA - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.E. LGTBI+SAMARUCS VALENCIA",
+      "location": "Valencia - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/sinn.png",
+      "club": "C.N. ALBACORA",
+      "location": "castellón - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/alogo.jpg",
+      "club": "C.N. AZAHAR SINCRO",
+      "location": "CASTELLO - CASTELLÓ"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/209_WhatsApp%20Image%202023-09-01%20at%2011.06.25.jpeg",
+      "club": "C.N. BENICARLO",
+      "location": "BENICARLO - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/212_CNB.jpg",
+      "club": "C.N. BENISSA",
+      "location": "BENISSA - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. BETERA",
+      "location": "BETERA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/CN%20Bosco%20logo%20color.jpg",
+      "club": "C.N. BOSCO",
+      "location": "VALENCIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. CATARROJA",
+      "location": "MASSANASSA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. CULLERA",
+      "location": "CULLERA - Valencia"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/ESCUDOClubDelfin_NUEVO_-_copia.jpg",
+      "club": "C.N. DELFIN",
+      "location": "VALENCIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/220_logo_negrofondonaranja.jpg",
+      "club": "C.N. ELCHE",
+      "location": "ELCHE - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. FANATIC SWIM CASTELLON",
+      "location": "CASTELLON - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/ESCDO%2003.jpg",
+      "club": "C.N. FENIX MANISES",
+      "location": "Manises - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/223_ESCUDO%20FONDO%20BLANCO%20copia.jpg",
+      "club": "C.N. FERCA-SAN JOSE",
+      "location": "valencia - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. HORADADA",
+      "location": "PILAR DE LA HORADADA - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. IBENSE",
+      "location": "IBI - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. INSTINTO DEPORTIVO MONÓVAR",
+      "location": "MONÓVAR - Alacant"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/229_LOGO%20LA%20COSTERA%20CANALS%20naranja%20con%20canals.jpg",
+      "club": "C.N. LA COSTERA",
+      "location": "CANALS - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/231_natacion2.jpg",
+      "club": "C.N. LA VALL D UIXO",
+      "location": "VALL D'UIXÓ - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. LLIRIA",
+      "location": "LLIRIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. MASTER NATURASWIM PETRER",
+      "location": "PETRER - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/236_CNM%20logo%20reducido.jpg",
+      "club": "C.N. MEDITERRANEO VALENCIA",
+      "location": "VALENCIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. MONCADA",
+      "location": "Moncada - Valencia"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/13735048_118376145265797_5495496193053038004_o.jpg",
+      "club": "C.N. NEPTUNO-LALCUDIA",
+      "location": "L'Alcúdia - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/20190510_130714.jpg",
+      "club": "C.N. ONDA",
+      "location": "ONDA - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/logo%20cno.jpg",
+      "club": "C.N. ONTINYENT",
+      "location": "ONTINYENT - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/243_ESCUDO%20OFICIAL%20CNP%20(2).jpg",
+      "club": "C.N. PETRER",
+      "location": "PETRER - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/244_Escudo%20Nuevo%202019.jpg",
+      "club": "C.N. PICASSENT",
+      "location": "PICASSENT - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/245_Dise%C3%B1o%20sin%20t%C3%ADtulo-2%20copia%203.png",
+      "club": "C.N. PISCINA LA NUCIA CAMILO CANO",
+      "location": "LA NUCIA - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/Escudo%20cnpiscis%20calidad%20alta.jpg",
+      "club": "C.N. PISCIS-MISLATA",
+      "location": "MISLATA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. POBLAQUATICS",
+      "location": "- VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/248_CNQ%20logo%20color%20(fondo%20blanco).jpg",
+      "club": "C.N. QUART DE POBLET",
+      "location": "Quart de poblet - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/251_logo.jpg",
+      "club": "C.N. RIBA-ROJA",
+      "location": "RIBARROJA DEL TURIA - Valencia"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. SAGUNTO MORVEDRE MASTER",
+      "location": "PUERTO DE SAGUNTO - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/255_IMG_20210515_105236_054.jpg",
+      "club": "C.N. SAN VICENTE",
+      "location": "SANT VICENTE RASPEIG - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/256_escudo%20club.jpg",
+      "club": "C.N. SAX",
+      "location": "SAX - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/FB_IMG_1559926379630.jpg",
+      "club": "C.N. SUECA",
+      "location": "SUECA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/261_ESCUDO%20CLUB.jpg",
+      "club": "C.N. TORREVIEJA",
+      "location": "TORREVIEJA - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/LOGO%20TRENCAONES.jpg",
+      "club": "C.N. TRENCAONES ALZIRA",
+      "location": "ALZIRA - Valencia"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. UTIEL",
+      "location": "UTIEL - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/Logo%202019.jpg",
+      "club": "C.N. VALENCIA MASTERS SEDAVI",
+      "location": "Sedaví - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/D1131C12-5382-40F1-BC30-A39813D44901.jpeg",
+      "club": "C.N. VILA-REAL",
+      "location": "VILA-REAL - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/268_club.jpg",
+      "club": "C.N. VILLENA ALTO VINALOPO",
+      "location": "VILLENA - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "C.N. VINAROS",
+      "location": "VINAROZ - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/271_cropped-logo-e1557765262931.png",
+      "club": "C.N. XATIVA",
+      "location": "XATIVA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/272_logo%20club%20para%20guardar.jpg",
+      "club": "C.N. XIRIVELLA",
+      "location": "XIRIVELLA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/4941D7A8-E8E3-438C-BABC-8CAC815F0D2B.jpeg",
+      "club": "C.N. XUQUER",
+      "location": "Algemesí - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/logo%20peque%C3%B1o.jpg",
+      "club": "C.N.A MORVEDRE",
+      "location": "SAGUNTO - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/350_Club%20Captura.JPG",
+      "club": "C.N.A PSWATER BENIDORM",
+      "location": "POLOP - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/276_LOGO%20CLUB%20NiE%20Azul-Verde.png",
+      "club": "C.N.E. GANDIA",
+      "location": "GANDIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/logo%20waterpolo%20negro-02(1).png",
+      "club": "C.W. CASTELLO",
+      "location": "CASTELLÓN - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/284_ESCUDO.jpg",
+      "club": "C.WATERPOLO PUERTA VALENCIA",
+      "location": "AYORA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CD RARI NANTES LUCENTUM ALACANT",
+      "location": "ALICANTE - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/287_sello%20club.jpg",
+      "club": "CD UNIV. POLI. VALENCIA",
+      "location": "VALENCIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/345_Logotipo%20Montemar%20Azul.jpg",
+      "club": "CLUB ATLÉTICO MONTEMAR",
+      "location": "Alicante - Alicante"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB D'ESPORTS ADAPTATS ADAPONDA",
+      "location": "ONDA - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/LOGO%20TRAGALEGUAS-1.jpg",
+      "club": "CLUB DE ATLETISMO TRAGALEGUAS",
+      "location": "Manises - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/290_98B7B88A-8C04-4AAB-AB44-A87240E4CBBE.jpeg",
+      "club": "CLUB DE TENIS ASPRILLAS ELCHE",
+      "location": "ELCHE - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/ESCUDO.PNG",
+      "club": "CLUB DEPORTIVO CAXTON COLLEGE",
+      "location": "PUÇOL - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/184_logo-CDEV-alicante-2022_escudo-CDEV-alc-color.png",
+      "club": "CLUB DEPORTIVO EL VALLE",
+      "location": "ALICANTE - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/291_finisher.png",
+      "club": "CLUB DEPORTIVO FINISHER",
+      "location": "BENIDORM - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/4B3ABB38-1FD2-442E-871B-2176A77240FC.png",
+      "club": "CLUB DEPORTIVO NADOS CASTELLON",
+      "location": "CASTELLÓN - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/293_GORILA%20+%20LETRAS%20CON%20FONDO%20BLANCO.png",
+      "club": "CLUB DEPORTIVO NATACION ALDAIA",
+      "location": "Aldaia - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB DEPORTIVO NATACIÓN ALONE SANTA POLA",
+      "location": "ALICANTE - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/331_Logo%20principal.jpg",
+      "club": "CLUB DEPORTIVO RARI NANTES WATERPOLARS",
+      "location": "TORRENT - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/342_logo.png",
+      "club": "CLUB DEPORTIVO TRIATLON CASTELLON",
+      "location": "Castellón de la Plana - Castellón"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB DEPORTIVO WATERPOLO SAN VICENTE",
+      "location": "SAN VICENTE DEL RASPEIG - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/365_logoDRACS_prov_s-fondo-h%20(1).png",
+      "club": "CLUB ESPORTIU LGTBI DRACS VALENCIA",
+      "location": "VALENCIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB ILICITANO TRIATLON",
+      "location": "- ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/LOGO_CnA%20(1).jpg",
+      "club": "CLUB NATACIO ALCOI",
+      "location": "ALCOY - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/199_logo%20club.jpeg",
+      "club": "CLUB NATACIO ALFA ILICITANO",
+      "location": "Elche - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB NATACIÓ ALTEA",
+      "location": "ALTEA - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB NATACIÓ BROMERA ALMASSORA",
+      "location": "ALMASSORA - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB NATACIO BROMERA ALMASSORA",
+      "location": "ALMASSORA - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/LogoDenia.jpg",
+      "club": "CLUB NATACIÓ DENIA",
+      "location": "DENIA - Alicante"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/Escudo%20Nataci%C3%B3%2010x10,86cm.png",
+      "club": "CLUB NATACIÓ ONDARA",
+      "location": "ONDARA - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/300_300_LOGO%20ALFA.png",
+      "club": "CLUB NATACIÓN ALFA TORREVIEJA",
+      "location": "TORREVIEJA - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB NATACIÓN ALMANSA",
+      "location": "ALMANSA - ALBACETE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB NATACION AMPOSTA",
+      "location": "AMPOSTA - TARRAGONA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/ATLANTIS---LOGO-2018-2.png",
+      "club": "CLUB NATACIÓN ARTISTICA ATLANTIS",
+      "location": "VALENCIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/301_LOGO.jpg",
+      "club": "CLUB NATACION BARRACUDAS TORRENT",
+      "location": "Torrent - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/330_LOGO%20CMD%20HORADADA.jpg",
+      "club": "CLUB NATACIÓN CMD HORADADA",
+      "location": "PILAR DE LA HORADADA - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/303_Screenshot_20230114_193612_WhatsApp.jpg",
+      "club": "CLUB NATACIÓN ELDA",
+      "location": "ELDA - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB NATACIÓN MASTER MURCIA",
+      "location": "ALBERCA DE LA TORRE - MURCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB NATACION NADAMAS ALMASSERA",
+      "location": "ALMASSERA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB NATACIÓN OCEANMAN",
+      "location": "0 - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB NATACION OLIVA",
+      "location": "OLIVA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/IMG_20190607_122854.png",
+      "club": "CLUB NATACION PATACONA",
+      "location": "ALBORAYA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/367_SQUALI%20PICHON%20ELCHE%20TOALLA%202%C3%A72.jpg",
+      "club": "CLUB NATACIÓN PICHÓN ELCHE",
+      "location": "Elche - Alicante"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/333_logo%20escudo%20club%20red%20mar%20top%20ten%202.jpg%20%202.jpg",
+      "club": "CLUB NATACION RED MAR TOP TEN ALICANTE",
+      "location": "ALICANTE - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/SIMPLIFICADO%20LETRAS.jpg",
+      "club": "CLUB NATACION SAMARUC ALMUSSAFES",
+      "location": "Almussafes - Valencia"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB NOU GODELLA NATACIÓN",
+      "location": "GODELLA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB SOC TURIS NATACIO",
+      "location": "TURIS - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/355_LOGO%20TPN%201%20.png",
+      "club": "CLUB TPN SAFOR GANDIA",
+      "location": "GANDIA - Valencia"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB TRIATLON HURACAN VALENCIA",
+      "location": "- VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/174_LOgoValenciano.jpg",
+      "club": "CLUB VALENCIANO DE NATACIÓN",
+      "location": "CARPESA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "CLUB WATERPOLO ALBACETE",
+      "location": "ALBACETE - ALBACETE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/279_logowaterpoloAlicante.jpg",
+      "club": "CLUB WATERPOLO ALICANTE",
+      "location": "ALICANTE - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/CWE.png",
+      "club": "CLUB WATERPOLO ELX",
+      "location": "ELCHE - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/176_logo_waterpolo_rojo.png",
+      "club": "CLUB WATERPOLO PETRER",
+      "location": "PETRER - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/178_03_Mascotlogo_CWSHARKS_Version-sello_10Aniversario_Final-Art.png",
+      "club": "CLUB WATERPOLO SHARKS",
+      "location": "VALENCIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/282_logo_small.jpeg",
+      "club": "CLUB WATERPOLO UPV",
+      "location": "VALENCIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/168_descarga.jpg",
+      "club": "CN AQUATIC DE ALICANTE",
+      "location": "ALICANTE - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/Logo%20Club.jpg",
+      "club": "CST-CST COSTA AZAHAR",
+      "location": "CASTELLON - CASTELLÓN"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "ESCOLETA FNCV",
+      "location": "- VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "ESCUELA FNCV",
+      "location": "Valencia - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "ESTADIO MIRALBUENO EL OLIVAR",
+      "location": "ZARAGOZA - ZARAGOZA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "FED. COMUNIDAD VALENCIANA",
+      "location": "VALENCIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/no-logo.jpg",
+      "club": "FEDERACIÓN DE DEPORTES ADAPTADOS DE LA COMUNITAT VALENCIANA",
+      "location": "VALENCIA - VALENCIA"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/329_logokzm.PNG",
+      "club": "KZM SWIMMING TEAM",
+      "location": "PETRER - ALICANTE"
+    },
+    {
+      "image": "https://www.fncv.es/archivos/clubes/logos/logo_vila-swim.jpg",
+      "club": "VILA-SWIM FONDISTAS CLUB NATACIÓN",
+      "location": "VILA-REAL - CASTELLÓN"
+    }
+  ]

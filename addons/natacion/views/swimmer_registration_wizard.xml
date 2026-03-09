@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_swimmer_registration_list" model="ir.ui.view">
+        <field name="name">res.partner.wizard.list</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="not is_payment_valid" create="false">
+                <field name="name"/>
+                <field name="club"/>
+                <field name="is_payment_valid" invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_natacion_swimmer_registration_wizard_form" model="ir.ui.view">
+        <field name="name">natacion.swimmer.registration.wizard.form</field>
+        <field name="model">natacion.swimmer.registration.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Inscribir Nadadores">
+                <sheet>
+                    <field name="championship_id" invisible="1"/>
+                    <group>
+                        <p class="oe_grey">Selecciona los nadadores de los clubes del campeonato:</p>
+                        <field name="swimmer_ids" 
+                               nolabel="1" 
+                               context="{'list_view_ref': 'natacion.view_swimmer_registration_list'}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Inscribir" type="object" name="action_register_swimmers" class="btn-primary"/>
+                    <button string="Cancelar" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

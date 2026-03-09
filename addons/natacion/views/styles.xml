@@ -1,0 +1,37 @@
+<odoo>
+  <record model="ir.ui.view" id="natacion.style_tree_view">
+    <field name="name">natacion.style.tree</field>
+    <field name="model">natacion.style</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="best_times" />
+      </list>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="natacion.style_form_view">
+    <field name="name">natacion.style.form</field>
+    <field name="model">natacion.style</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+          </group>
+          <notebook>
+            <page string="Mejores tiempos">
+              <field name="best_times">
+                <list>
+                  <field name="swimmer" />
+                  <field name="category" />
+                  <field name="time" />
+                </list>
+              </field>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+</odoo>

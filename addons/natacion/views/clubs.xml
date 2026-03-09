@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="natacion.club_tree_view">
+        <field name="name">natacion.club.tree</field>
+        <field name="model">natacion.club</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="town"/>
+                <field name="swimmers" widget="many2many_count" string="Socis"/>
+                <field name="total_points" widget="statinfo"/>
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="natacion.club_form_view">
+        <field name="name">natacion.club.form</field>
+        <field name="model">natacion.club</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="image_1920" widget="image" class="oe_avatar"/>
+                        <field name="name"/>
+                        <field name="town"/>
+                        <field name="total_points" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Nadadores">
+                            <field name="swimmers">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="category"/>
+                                    <field name="best_times"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Kanban -->
+    <record model="ir.ui.view" id="natacion.club_kanban_view">
+        <field name="name">natacion.club.kanban</field>
+        <field name="model">natacion.club</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card">
+                            <div class="oe_kanban_avatar">
+                                <field name="image_1920" widget="image" class="oe_avatar"/>
+                            </div>
+                            <div class="oe_kanban_content">
+                                <strong><field name="name"/></strong>
+                                <div>
+                                    <span>Puntos: </span>
+                                    <field name="total_points" widget="statinfo"/>
+                                </div>
+                                <div>
+                                    <span>Socis: </span>
+                                    <field name="swimmers" widget="many2many_count"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+</odoo>

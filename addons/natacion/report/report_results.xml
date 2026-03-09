@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_natacion_results" model="ir.actions.report">
+        <field name="name">Resultados del Campeonato</field>
+        <field name="model">natacion.championship</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">natacion.report_results_template</field>
+        <field name="report_file">natacion.report_results_template</field>
+    </record>
+
+    <template id="report_results_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="championship">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Resultados: <span t-field="championship.name"/></h2>
+                        <p>Clasificación final del campeonato...</p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

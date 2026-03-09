@@ -1,0 +1,35 @@
+<odoo>
+    <record model="ir.ui.view" id="natacion.series_tree_view">
+        <field name="name">natacion.series.tree</field>
+        <field name="model">natacion.series</field>
+        <field name="arch" type="xml">
+            <list string="Series">
+                <field name="name"/>
+                <field name="test"/>
+                <field name="results"/>
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="natacion.series_form_view">
+        <field name="name">natacion.series.form</field>
+        <field name="model">natacion.series</field>
+        <field name="arch" type="xml">
+            <form string="Serie">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="test"/>
+                        <field name="results">
+                            <list editable="bottom">
+                                <field name="swimmer"/>
+                                <field name="time"/>
+                                <field name="position"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

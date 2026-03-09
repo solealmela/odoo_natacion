@@ -1,0 +1,46 @@
+<odoo>
+    <record model="ir.ui.view" id="natacion.test_tree_view">
+        <field name="name">natacion.test.tree</field>
+        <field name="model">natacion.test</field>
+        <field name="arch" type="xml">
+            <list string="Pruebas">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="style"/>
+                <field name="category"/>
+                <field name="session"/>
+                <field name="swimmers"/>
+                <field name="series"/>
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="natacion.test_form_view">
+        <field name="name">natacion.test.form</field>
+        <field name="model">natacion.test</field>
+        <field name="arch" type="xml">
+            <form string="Prueba de Natación">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="style"/>
+                        <field name="category"/>
+                        <field name="session"/>
+                        <field name="swimmers" widget="many2many_tags"/>
+                    </group>
+                    <notebook>
+                        <page string="Series">
+                            <field name="series">
+                                <list string="Series de la prueba">
+                                    <field name="name"/>
+                                    <field name="results"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

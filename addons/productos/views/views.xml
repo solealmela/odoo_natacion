@@ -1,0 +1,96 @@
+<odoo>
+	<data>
+
+		<record id="productos.productos_wizard_action" model="ir.actions.act_window">
+			<field name="name">Modificar productos</field>
+			<field name="res_model">productos.product_wizard</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="binding_model_id" ref="product.model_product_template" />
+		</record>
+
+		<record model="ir.ui.view" id="productos.inherit_form">
+			<field name="name">productos_form</field>
+			<field name="model">product.template</field>
+			<field name="inherit_id" ref="product.product_template_only_form_view"></field>
+			<field name="arch" type="xml">
+					
+				<field name="product_tooltip" position="after">
+					<group>
+						<field name="es_destacat"/>
+						<field name="text_publicitari"/>
+					</group>
+				</field>
+
+				<field name="text_publicitari" position="after">
+					<button name="%(productos.productos_wizard_action)d"
+							type="action" string="Update Product"
+							class="oe_highlight"
+					/>
+				</field>
+			</field>
+		</record>
+
+		<record id="productos.productos_wizard_form" model="ir.ui.view">
+			<field name="name">productos_wizard_form</field>
+			<field name="model">productos.product_wizard</field>
+			<field name="arch" type="xml">
+				<form string="Asistente de Creación">
+					<field name="step" invisible="1"/>
+					<sheet>
+						<group invisible="step != 'anyadir_productos'">
+							<field name="productos_ids" widget="many2many_tags"/>
+						</group>
+
+						<group invisible="step != 'texto_publicitario'">
+							<field name="nuevo_texto" />
+						</group>
+					</sheet>
+
+					<footer>
+						<button name="action_previous" string="Anterior" type="object" invisible="step == 'anyadir_productos'"/>
+						<button name="action_next" string="Siguiente" type="object" class="btn-primary" invisible="step == 'texto_publicitario'"/>
+						<button name="action_actualizar_productos" string="Modificar productos" type="object" class="btn-success" invisible="step != 'texto_publicitario'"/>
+						<button string="Cancelar" class="btn-secondary" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="productos.productos_report" model="ir.actions.report">
+			<field name="name">producto_report</field>
+			<field name="model">product.template</field>
+			<field name="report_type">qweb-pdf</field>
+			<field name="report_name">productos.report_product_template_view</field>
+			<field name="report_file">productos.report_product_template_view</field>
+        	<field name="binding_model_id" ref="product.model_product_template"/>
+			<field name="binding_type">report</field>
+		</record>
+
+		<template id="report_product_template_view">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="doc">
+					<t t-call="web.external_layout">
+						<h3>Productos info:</h3>
+						<table>
+							<tr>
+								<td style="width: 200mm; text-align: center;"><p>Imagen</p></td>
+								<td style="width: 200mm; text-align: center;"><p>Precio</p></td>
+								<td style="width: 200mm; text-align: center;"><p>Texto publicitario</p></td>
+							</tr>
+							<tr>
+								<td style="width: 200mm; text-align: center;">
+									<img t-if="doc.image_1920" 
+										t-att-src="image_data_uri(doc.image_1920)" 
+										style="max-width: 35mm; max-height: 25mm; margin-top: 5mm; filter: brightness(0) invert(1);"/>
+								</td>
+								<td style="width: 200mm; text-align: center;"><span t-field="doc.list_price" /></td>
+								<td style="width: 200mm; text-align: center;"><span t-field="doc.text_publicitari" /></td>
+							</tr>
+						</table>
+					</t>
+				</t>
+			</t>
+		</template>
+	</data>
+</odoo>
