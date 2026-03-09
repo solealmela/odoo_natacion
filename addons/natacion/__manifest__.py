@@ -26,6 +26,7 @@
         'report/report_paper_format.xml',
         'report/report_results.xml',  
         'report/report_ticket.xml',
+        'views/session_results_wizard.xml',
         'views/ticket_wizard_view.xml',
         'views/swimmer_registration_wizard.xml',
         'views/championships_wizard.xml',

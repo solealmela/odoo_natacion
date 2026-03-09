@@ -5,8 +5,8 @@ import json
 
 class NatacionController(http.Controller):
 
-    #http://localhost:8069/natacion/api/championship/1
-    @http.route('/natacion/championship/<int:champ_id>', type='http', auth='public', methods=['GET'], csrf=False)
+    # URL: http://localhost:8069/natacion/api/championship/1
+    @http.route('/natacion/api/championship/<int:champ_id>', type='http', auth='public', methods=['GET'], cors='*', csrf=False)
     def get_championship(self, champ_id, **kwargs):
         champ = request.env['natacion.championship'].sudo().browse(champ_id)
         
@@ -22,15 +22,20 @@ class NatacionController(http.Controller):
             } for s in champ.sessions]
         }
         
-        return request.make_response(
-            json.dumps(data),   
-            headers={'Content-Type': 'application/json'}
-        )
-    
+        headers = {
+            'Content-Type': 'application/json',
+        }
+        
+        return request.make_response(json.dumps(data), headers=headers)
 
-    #@http.route('/natacion/pagar_quota', type='http', auth='public', cors='*', csrf=False) 
-    #def apiGet(self, **args):
-    #    print(args, http.request.httprequest.method)
-    #    if http.request.httprequest.method == 'POST':
+    @http.route('/natacion/pagar_quota', type='json', auth='public', methods=['POST'], cors='*', csrf=False)
+    def pagar_quota(self, **kwargs):
+        user_id = kwargs.get('id')
+        
+        print(f"--- PROCESANDO PAGO EN ODOO PARA EL USUARIO: {user_id} ---")
 
-
+        return {
+            'status': 'success',
+            'message': f'Pago registrado correctamente para el ID {user_id}',
+            'invoice_url': 'http://localhost:8069/report/html/account.report_invoice/1'
+        }

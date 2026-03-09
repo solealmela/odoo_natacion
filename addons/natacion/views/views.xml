@@ -44,13 +44,6 @@
             <field name="view_mode">list,form</field>
         </record>
 
-        <!-- <record model="ir.actions.act_window" id="natacion.action_campionat_wizard">
-            <field name="name">Crear campionat</field>
-            <field name="res_model">natacion.championship_wizard</field>
-            <field name="view_mode">form</field>
-            <field name="target">new</field>
-        </record> -->
-
         <!-- Sesiones -->
         <record id="natacion.action_sesiones" model="ir.actions.act_window">
             <field name="name">Sesiones</field>
@@ -99,7 +92,7 @@
             <field name="name">Gestionar Resultados</field>
             <field name="res_model">natacion.session.results.wizard</field>
             <field name="view_mode">form</field>
-            <field name="target">new</field>
+            <field name="target">new</field> 
         </record>
 
         <record id="action_championship_creation_wizard" model="ir.actions.act_window">

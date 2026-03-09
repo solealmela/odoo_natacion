@@ -133,7 +133,11 @@ class Championship(models.Model):
     date_end = fields.Date(string='Fecha de fin')
     total_duration = fields.Float(string='Duración total', compute='_compute_total_duration', store=True)
     classification = fields.Json(string="Clasificación", compute="_compute_classification")
-    classification_html = fields.Html(string="Clasificación General")
+    classification_html = fields.Html(
+        string="Clasificación General", 
+        compute="_generate_html_classification", 
+        store=True
+    )
 
     @api.depends('sessions', 'sessions.test_ids', 'sessions.test_ids.series')
     def _compute_total_duration(self):
@@ -145,42 +149,61 @@ class Championship(models.Model):
             champ.total_duration = total
 
     def _generate_html_classification(self):
-        import json # No olvides importar json arriba
         for record in self:
-            html = "<table class='table table-striped'><thead><tr>"
-            html += "<th>Nadador</th><th>Prueba</th><th>Tiempo</th></tr></thead><tbody>"
-            for session in record.sessions:
-                for test in session.test_ids:
-                    for serie in test.series:
-                        if hasattr(serie, 'results_json') and serie.results_json:
-                            data = json.loads(serie.results_json)
-                            for res in data:
-                                html += f"<tr><td>{res['swimmer_name']}</td><td>{test.name}</td><td>{res['time']}</td></tr>"
-            html += "</tbody></table>"
+            html = "<div class='table-responsive'><table class='table table-sm table-striped'>"
+            html += "<thead><tr class='bg-primary text-white'><th>Pos</th><th>Nadador</th><th>Prueba</th><th>Club</th><th>Tiempo</th></tr></thead><tbody>"
+
+            results = self.env['natacion.result'].search([
+                ('series.test.session.championship_id', '=', record.id)
+            ], order='time asc')
+
+            if not results:
+                html += "<tr><td colspan='5' class='text-center'>No hay resultados registrados todavía.</td></tr>"
+            else:
+                for pos, res in enumerate(results, 1):
+                    html += f"""<tr>
+                        <td><b>{pos}º</b></td>
+                        <td>{res.swimmer.name}</td>
+                        <td>{res.series.test.name}</td>
+                        <td>{res.swimmer.club.name or '-'}</td>
+                        <td>{res.time} s</td>
+                    </tr>"""
+            
+            html += "</tbody></table></div>"
             record.classification_html = html
 
+    @api.depends('sessions.test_ids.series.results.time')
     def _compute_classification(self):
         for champ in self:
             result = {}
             for session in champ.sessions:
                 for test in session.test_ids: 
-                    cat_name = test.category.name if test.category else 'S/C'
-                    style_name = test.style.name if test.style else 'S/E'
+                    cat_name = test.category.name if test.category else 'General'
+                    style_name = test.style.name if test.style else 'Estilo Libre'
                     
-                    result.setdefault(cat_name, {})
-                    result[cat_name].setdefault(style_name, [])
+                    if cat_name not in result:
+                        result[cat_name] = {}
+                    if style_name not in result:
+                        result[style_name] = []
 
+                    test_results = []
                     for serie in test.series:
-                        sorted_results = sorted(serie.results, key=lambda r: r.time)
-                        for pos, r in enumerate(sorted_results, 1):
-                            result[cat_name][style_name].append({
+                        for r in serie.results:
+                            test_results.append({
                                 'swimmer': r.swimmer.name if r.swimmer else 'Anónimo',
                                 'time': r.time,
-                                'position': pos,
+                                'club': r.swimmer.club.name if r.swimmer.club else 'Independiente'
                             })
-                            if r:
-                                r.position = pos
+
+                    test_results.sort(key=lambda x: x['time'])
+
+                    for pos, res in enumerate(test_results, 1):
+                        res['position'] = pos
+                    
+                    result[style_name] = test_results
+
             champ.classification = result
+            champ._generate_html_classification()
 
     def action_populate_championship(self):
         import random
@@ -227,14 +250,22 @@ class Championship(models.Model):
         for session in sessions:
             for cat in categories:
                 for style in styles:
-                    Test.create({
+                    new_test = Test.create({
                         'name': f'{style.name} - {cat.name}',
                         'session': session.id,
                         'category': cat.id,
                         'style': style.id,
+                        'swimmers': [(6, 0, self.swimmers.ids)] 
                     })
 
     def action_open_results_wizard(self):
+        self.ensure_one()
+        
+        first_session = self.sessions[:1]
+        
+        if not first_session:
+            raise ValidationError("Este campeonato no tiene sesiones creadas. ¡Crea una primero!")
+
         return {
             'type': 'ir.actions.act_window',
             'name': 'Gestionar Resultados',
@@ -242,7 +273,7 @@ class Championship(models.Model):
             'view_mode': 'form',
             'target': 'new',
             'context': {
-                'default_session_id': self.sessions[:1].id if self.sessions else False
+                'default_session': first_session.id, 
             }
         }
     
@@ -412,8 +443,6 @@ class SwimmerRegistrationWizard(models.TransientModel):
         }
 
 
-import json
-
 class SessionResultsWizard(models.TransientModel):
     _name = 'natacion.session.results.wizard'
     _description = 'Wizard para gestionar resultados'
@@ -423,6 +452,12 @@ class SessionResultsWizard(models.TransientModel):
     series = fields.Many2one('natacion.series', string='Serie', required=True)
     result_line = fields.One2many('natacion.session.results.wizard.line', 'wizard', string='Resultados')
 
+    @api.onchange('session')
+    def _onchange_session(self):
+        self.test = False
+        self.series = False
+        return {'domain': {'test': [('session', '=', self.session.id)]}}
+
     @api.onchange('test')
     def _onchange_test(self):
         self.series = False
@@ -430,40 +465,52 @@ class SessionResultsWizard(models.TransientModel):
 
     @api.onchange('series')
     def _onchange_series(self):
-        """Cargar los nadadores inscritos en la prueba para esta serie"""
-        if self.series and self.test:
+        self.result_line = [(5, 0, 0)]
+        
+        if self.series:
             lines = []
-            for swimmer in self.test.swimmers:
+            existing_results = self.env['natacion.result'].search([
+                ('series', '=', self.series.id)
+            ])
+ 
+            times_map = {r.swimmer.id: r.time for r in existing_results}
+
+            for swimmer in self.series.test.swimmers:
+                saved_time = times_map.get(swimmer.id, 0.0)
+                
                 lines.append((0, 0, {
                     'swimmer': swimmer.id,
-                    'time': 0.0
+                    'time': saved_time
                 }))
-            self.result_line = [(5, 0, 0)] + lines
+
+            self.result_line = lines
 
     def action_save_results(self):
         self.ensure_one()
-        results_data = []
+        if not self.series:
+            raise ValidationError("No hay una serie seleccionada.")
+
+        self.env['natacion.result'].search([('series', '=', self.series.id)]).unlink()
+
         for line in self.result_line:
-            results_data.append({
-                'swimmer_name': line.swimmer.name,
-                'time': line.time,
-                'category': line.swimmer.category.name if line.swimmer.category else 'S/C'
-            })
+            if line.time > 0:
+                self.env['natacion.result'].create({
+                    'swimmer': line.swimmer.id,
+                    'series': self.series.id,
+                    'time': line.time
+                })
         
-        self.series.write({
-            'results_json': json.dumps(results_data)
-        })
-        
-        if self.session.championship_id:
-            self.session.championship_id._generate_html_classification()
+        champ = self.session.championship_id
+        if champ:
+            champ._generate_html_classification()
             
         return {'type': 'ir.actions.act_window_close'}
-
+    
 class SessionResultsWizardLine(models.TransientModel):
     _name = 'natacion.session.results.wizard.line'
     _description = 'Línea de resultados'
 
-    wizard = fields.Many2one('natacion.session.results.wizard')
+    wizard = fields.Many2one('natacion.session.results.wizard', invisible=True)
     swimmer = fields.Many2one('res.partner', string='Nadador', readonly=True)
     time = fields.Float(string='Tiempo (segundos)')
 

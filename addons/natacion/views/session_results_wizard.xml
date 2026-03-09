@@ -4,30 +4,36 @@
         <field name="model">natacion.session.results.wizard</field>
         <field name="arch" type="xml">
             <form string="Introducir Tiempos de la Serie">
-                <group>
+                <sheet>
                     <group>
-                        <field name="session"/>
-                        <field name="test" domain="[('session', '=', session)]"/>
+                        <group>
+                            <field name="session" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="test" 
+                                   domain="[('session', '=', session)]" 
+                                   options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                        <group>
+                            <field name="series" 
+                                   domain="[('test', '=', test)]" 
+                                   options="{'no_create': True, 'no_open': True}"/>
+                        </group>
                     </group>
-                    <group>
-                        <field name="series" domain="[('test', '=', test)]"/>
-                    </group>
-                </group>
-                <notebook>
-                    <page string="Cronometraje">
-                        <field name="result_line">
-                            <list editable="bottom" create="false" delete="false">
-                                <field name="swimmer"/>
-                                <field name="time" widget="float_time"/>
-                            </list>
-                        </field>
-                    </page>
-                </notebook>
+                    <notebook>
+                        <page string="Cronometraje" name="cronometraje">
+                            <field name="result_line" nolabel="1">
+                                <list editable="bottom" create="0" delete="0">
+                                     <field name="swimmer" readonly="1"/> 
+                                    <field name="time" string="Tiempo (Segundos)"/>
+                                </list>
+                            </field>
+                        </page> 
+                    </notebook>
+                </sheet>
                 <footer>
-                    <button name="action_save_results" string="Guardar en JSON y Cerrar" type="object" class="btn-primary"/>
-                    <button string="Descartar" class="btn-secondary" special="cancel"/>
+                    <button name="action_save_results" string="Guardar Resultados" type="object" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
                 </footer>
             </form>
         </field>
     </record>
-</odoo>
+</odoo> 

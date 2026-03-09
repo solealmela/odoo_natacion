@@ -36,7 +36,7 @@
                     <button name="action_open_results_wizard" 
                         type="object" 
                         string="Resultados de la sesión" 
-                        class="btn-primary"/>
+                        context="{'default_session': id}"/>
                     <button name="%(natacion.action_report_natacion_results)d" 
                         type="action" 
                         string="Descarregar Resultats" 
@@ -76,7 +76,7 @@
                         </page>
 
                         <page string="Clasificación">
-                            <field name="classification" widget="json" readonly="1"/>
+                            <field name="classification_html" readonly="1"/>
                         </page>
                     </notebook>
                 </sheet>
